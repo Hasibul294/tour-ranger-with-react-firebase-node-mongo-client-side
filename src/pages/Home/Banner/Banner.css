@@ -1,0 +1,55 @@
+ .banner-container {
+     font-family: 'Poppins',
+     sans-serif;
+     width: 700px;
+ }
+ .banner-container h1{
+     font-size: 70px;
+     font-weight: 700;
+ }
+ .banner-container p{
+     font-size: 30px;
+      margin-bottom: 200px;
+      font-weight: 700;
+ }
+
+
+ @media only screen and (max-width: 480px) {
+     .banner-container {
+         font-family: 'Poppins',
+             sans-serif;
+         width: 200px;
+     }
+
+     .banner-container h1 {
+         font-size: 20px;
+         font-weight: 700;
+     }
+
+     .banner-container p {
+         font-size: 10px;
+         margin-bottom: 20px;
+         font-weight: 700;
+     }
+     
+ }
+
+ @media only screen and (min-width: 481px) and (max-width: 990px) {
+     .banner-container {
+         font-family: 'Poppins',
+             sans-serif;
+         width: 400px;
+     }
+
+     .banner-container h1 {
+         font-size: 50px;
+         font-weight: 700;
+     }
+
+     .banner-container p {
+         font-size: 20px;
+         margin-bottom: 70px;
+         font-weight: 700;
+     }
+     
+ }

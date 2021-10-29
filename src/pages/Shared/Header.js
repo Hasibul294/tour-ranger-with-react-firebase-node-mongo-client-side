@@ -26,17 +26,17 @@ const Header = () => {
               <Nav.Link as={NavLink} to="/home">
                 Home
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/services">
-                Services
+              <Nav.Link as={NavLink} to="/aboutUs">
+                About Us
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/doctors">
-                Doctors
+              <Nav.Link as={NavLink} to="/tourPackage">
+                Tour Package
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/blog">
+                Blog
               </Nav.Link>
               <Nav.Link as={NavLink} to="/contact">
                 Contact
-              </Nav.Link>
-              <Nav.Link as={NavLink} to="/news">
-                News
               </Nav.Link>
             </Nav>
             {user?.displayName && (
@@ -54,10 +54,10 @@ const Header = () => {
             ) : (
               <>
                 <Nav.Link as={NavLink} to="/login">
-                  <button className="btn btn-primary">LogIn</button>
+                  <button className="btn bg-orange text-white">LogIn</button>
                 </Nav.Link>
                 <Nav.Link as={NavLink} to="/register">
-                  <button className="btn btn-primary">Register</button>
+                  <button className="btn bg-orange text-white">Register</button>
                 </Nav.Link>
               </>
             )}

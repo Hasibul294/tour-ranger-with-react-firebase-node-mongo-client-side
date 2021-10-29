@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: 'Poppins',
+  sans-serif;
 }
 
 .App-logo {
@@ -9,6 +11,9 @@
 
 .bg-orange{
   background-color: #ff7f47;
+}
+.text-color{
+  color: #ff7f47;
 }
 
 @media (prefers-reduced-motion: no-preference) {
