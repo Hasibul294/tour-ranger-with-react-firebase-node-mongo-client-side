@@ -7,8 +7,8 @@ import "./Package.css";
 const Package = ({ item }) => {
   const { _id, title, cost, duration, description, img } = item;
   const history = useHistory();
-  const handleBooking = () => {
-    history.push(`/details/${_id}`);
+  const handleBooking = (id) => {
+    history.push(`/packages/${id}`);
   };
   return (
     <Col md={6} lg={4}>
@@ -17,7 +17,7 @@ const Package = ({ item }) => {
         <Card.Body>
           <div className="d-sm-flex justify-content-between  align-items-center">
             <p className="text-start fs-4 fw-bold">
-              {cost}
+              ${cost}
               <span className="fs-6 fw-lighter">/Per Parson</span>
             </p>
             <p className="text-start fs-6 fw-lighter">
@@ -32,9 +32,10 @@ const Package = ({ item }) => {
           <Card.Text className="text-start">
             {description.slice(0, 138)}.....
           </Card.Text>
+          <p>ID: {_id}</p>
           <p></p>
           <button
-            onClick={handleBooking}
+            onClick={() => handleBooking(_id)}
             className="btn bg-orange text-white d-block ms-auto"
           >
             Booking

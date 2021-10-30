@@ -9,6 +9,9 @@ import Footer from "./pages/Shared/Footer";
 import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Register/Register";
 import Packages from "./pages/Home/Packages/Packages";
+import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
+import BookPackage from "./pages/BookPackage/BookPackage";
+import AddPackage from "./pages/AddPackage/AddPackage";
 
 function App() {
   return (
@@ -26,13 +29,15 @@ function App() {
             <Route exact path="/package">
               <Packages></Packages>
             </Route>
+            <PrivateRoute exact path="/packages/:id">
+              <BookPackage></BookPackage>
+            </PrivateRoute>
+            <Route exact path="/addNewPackage">
+              <AddPackage></AddPackage>
+            </Route>
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            {/* <PrivateRoute exact path="/details/:id">
-              <ServiceDetails></ServiceDetails>
-            </PrivateRoute>
-             */}
             <Route exact path="/register">
               <Register></Register>
             </Route>
