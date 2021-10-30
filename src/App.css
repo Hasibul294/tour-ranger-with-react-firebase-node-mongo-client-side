@@ -16,6 +16,15 @@
   color: #ff7f47;
 }
 
+.googleButton{
+  border: 1px solid #ff7f47;
+}
+
+.googleButton:hover{
+  background-color: #ff7f47;
+  color: white;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

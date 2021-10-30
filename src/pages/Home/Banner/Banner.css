@@ -9,7 +9,7 @@
  }
  .banner-container p{
      font-size: 30px;
-      margin-bottom: 200px;
+      margin-bottom: 160px;
       font-weight: 700;
  }
 
@@ -34,7 +34,7 @@
      
  }
 
- @media only screen and (min-width: 481px) and (max-width: 990px) {
+ @media only screen and (min-width: 481px) and (max-width: 768px) {
      .banner-container {
          font-family: 'Poppins',
              sans-serif;
@@ -42,13 +42,13 @@
      }
 
      .banner-container h1 {
-         font-size: 50px;
+         font-size: 40px;
          font-weight: 700;
      }
 
      .banner-container p {
-         font-size: 20px;
-         margin-bottom: 70px;
+         font-size: 15px;
+         margin-bottom: 50px;
          font-weight: 700;
      }
      

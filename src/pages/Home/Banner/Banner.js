@@ -13,9 +13,8 @@ const Banner = () => {
           <img className="d-block w-100" src={banner1} alt="First slide" />
           <Carousel.Caption className="text-uppercase">
             <div className="banner-container">
-              <h1 className="fst-italic text-start">
-                Amazing tour in indonesia
-              </h1>
+              <h1 className="fst-italic text-start">Amazing tour </h1>
+              <h1 className="fst-italic text-start"> in indonesia</h1>
               <p className="text-start text-color">7 Days, 8 Night Tour</p>
             </div>
           </Carousel.Caption>
@@ -25,7 +24,8 @@ const Banner = () => {
           <img className="d-block w-100" src={banner2} alt="Second slide" />
           <Carousel.Caption className="text-uppercase">
             <div className="banner-container">
-              <h1 className="fst-italic text-start">Amazing tour in japan</h1>
+              <h1 className="fst-italic text-start">Amazing tour</h1>
+              <h1 className="fst-italic text-start">in japan</h1>
               <p className="text-start text-color">10 Days, 11 Night Tour</p>
             </div>
           </Carousel.Caption>
@@ -36,7 +36,8 @@ const Banner = () => {
 
           <Carousel.Caption className="text-uppercase">
             <div className="banner-container">
-              <h1 className="fst-italic text-start">Amazing tour in vietnam</h1>
+              <h1 className="fst-italic text-start">Amazing tour</h1>
+              <h1 className="fst-italic text-start">in vietnam</h1>
               <p className="text-start text-color">5 Days, 6 Night Tour</p>
             </div>
           </Carousel.Caption>
