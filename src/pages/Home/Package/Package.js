@@ -5,7 +5,7 @@ import icon from "../../../images/booking.png";
 import "./Package.css";
 
 const Package = ({ item }) => {
-  const { _id, title, cost, duration, description, img } = item;
+  const { _id, title, cost, duration, description, img, rating } = item;
   const history = useHistory();
   const handleBooking = (id) => {
     history.push(`/packages/${id}`);
@@ -32,13 +32,15 @@ const Package = ({ item }) => {
           <Card.Text className="text-start">
             {description.slice(0, 138)}.....
           </Card.Text>
-          <p>ID: {_id}</p>
-          <p></p>
+          <p className="text-start text-color">
+            {rating}K+
+            <span className="text-secondary">Rating</span>{" "}
+          </p>
           <button
             onClick={() => handleBooking(_id)}
-            className="btn bg-orange text-white d-block ms-auto"
+            className="btn bg-orange text-white d-block"
           >
-            Booking
+            Book Now
             <img className="ms-2" src={icon} alt="" />
           </button>
         </Card.Body>

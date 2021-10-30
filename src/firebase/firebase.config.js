@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCOgU532obXTeWHoyXd9FScI7bercG6lcU",
-  authDomain: "tour-ranger.firebaseapp.com",
-  projectId: "tour-ranger",
-  storageBucket: "tour-ranger.appspot.com",
-  messagingSenderId: "481940749272",
-  appId: "1:481940749272:web:5c33bb92a2c990e54b90ad",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 export default firebaseConfig;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import Rating from "react-rating";
 import { useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import "./BookPackage.css";
@@ -8,11 +9,12 @@ import "./BookPackage.css";
 const BookPackage = () => {
   const { id } = useParams();
   const { user } = useAuth();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [pack, setPack] = useState();
 
   const onSubmit = (data) => {
     console.log(data);
+    reset();
   };
 
   useEffect(() => {
@@ -42,10 +44,34 @@ const BookPackage = () => {
                   {pack?.duration}
                 </p>
               </div>
-              <hr className="text-secondary mb-2" />
-              <h4 className="text-start">Overview</h4>
-              <p className="text-start">{pack?.description}</p>
-              <hr className="text-secondary mb-2" />
+              <div className="text-start">
+                <hr className="text-secondary mb-2" />
+                <h4>Overview</h4>
+                <p>{pack?.description}</p>
+                <hr className="text-secondary mb-2" />
+                <h3 className="fw-bold">
+                  Cost: ${pack?.cost}
+                  <span className="fs-5 fw-lighter">/Per Parson</span>{" "}
+                </h3>
+                <hr className="text-secondary mb-2" />
+                <div className="text-start d-flex justify-content-between">
+                  <div>
+                    <Rating
+                      initialRating={pack?.rating}
+                      readonly
+                      emptySymbol="text-color far fa-star"
+                      fullSymbol="text-color fas fa-star"
+                    />
+                    {pack?.rating > 4.5 ? (
+                      <span> (Excellent)</span>
+                    ) : (
+                      <span> (Average)</span>
+                    )}
+                  </div>
+                  <p>800+ Review</p>
+                </div>
+                <hr className="text-secondary mb-2" />
+              </div>
             </div>
           </Col>
           <Col md={5} lg={4}>
