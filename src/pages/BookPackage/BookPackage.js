@@ -17,17 +17,22 @@ const BookPackage = () => {
   const onSubmit = (data) => {
     console.log(data);
     data.packageTitle = pack.title;
-    axios.post("http://localhost:5000/packages/booking", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Your Booking is Confirmed");
-        reset();
-        history.push("/home");
-      }
-    });
+    axios
+      .post(
+        "https://scary-broomstick-16729.herokuapp.com/packages/booking",
+        data
+      )
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Your Booking is Confirmed");
+          reset();
+          history.push("/home");
+        }
+      });
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/packages/${id}`)
+    fetch(`https://scary-broomstick-16729.herokuapp.com/packages/${id}`)
       .then((res) => res.json())
       .then((data) => setPack(data));
   }, [id]);

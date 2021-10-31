@@ -4,7 +4,7 @@ import { Col, Row } from "react-bootstrap";
 const ManageOrder = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://scary-broomstick-16729.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);
@@ -12,7 +12,7 @@ const ManageOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, want to delete this order?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://scary-broomstick-16729.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -28,7 +28,7 @@ const ManageOrder = () => {
   const handleUpdate = (id) => {
     const proceed = window.confirm("Confirm This order?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://scary-broomstick-16729.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "PUT",
         headers: {

@@ -8,12 +8,14 @@ const AddPackage = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/packages", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("New Package Added Successfully");
-        reset();
-      }
-    });
+    axios
+      .post("https://scary-broomstick-16729.herokuapp.com/packages", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("New Package Added Successfully");
+          reset();
+        }
+      });
   };
   return (
     <div className="container my-5 p-4">

@@ -9,7 +9,7 @@ const MyOrders = () => {
   const id = user.email;
   //   console.log(email);
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${id}`)
+    fetch(`https://scary-broomstick-16729.herokuapp.com/orders/${id}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [id]);
@@ -17,7 +17,7 @@ const MyOrders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, want to delete this order?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://scary-broomstick-16729.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
