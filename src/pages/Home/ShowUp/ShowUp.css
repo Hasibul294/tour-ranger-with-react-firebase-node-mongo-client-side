@@ -1,0 +1,8 @@
+.showUp-container{
+    background-image: url("../../../images/background.jpg");
+}
+.show-up{
+    background-color:cadetblue ;
+    border: 1px solid #ff7f47;
+    border-radius: 15px;
+}
