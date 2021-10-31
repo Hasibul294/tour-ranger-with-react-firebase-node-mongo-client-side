@@ -14,6 +14,7 @@ import BookPackage from "./pages/BookPackage/BookPackage";
 import AddPackage from "./pages/AddPackage/AddPackage";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import ManageOrder from "./pages/ManageOrder/ManageOrder";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
             <PrivateRoute exact path="/manageOrder">
               <ManageOrder></ManageOrder>
             </PrivateRoute>
+            <Route exact path="/contact">
+              <Contact></Contact>
+            </Route>
             <Route exact path="/login">
               <Login></Login>
             </Route>
