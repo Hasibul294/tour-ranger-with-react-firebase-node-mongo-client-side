@@ -26,7 +26,7 @@ const Package = ({ item }) => {
             </p>
           </div>
           <Card.Title className="fw-bold text-start text-color">
-            <i class="text-secondary me-1 fas fa-map-marker-alt"></i>
+            <i className="text-secondary me-1 fas fa-map-marker-alt"></i>
             {title}
           </Card.Title>
           <Card.Text className="text-start">
