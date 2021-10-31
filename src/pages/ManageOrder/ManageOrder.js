@@ -10,7 +10,7 @@ const ManageOrder = () => {
   }, [orders]);
 
   const handleDelete = (id) => {
-    const proceed = window.confirm("Are you sure, want to delete this order");
+    const proceed = window.confirm("Are you sure, want to delete this order?");
     if (proceed) {
       const url = `http://localhost:5000/orders/${id}`;
       fetch(url, {
@@ -26,20 +26,23 @@ const ManageOrder = () => {
   };
 
   const handleUpdate = (id) => {
-    const url = `http://localhost:5000/orders/${id}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount > 0) {
-          alert("Booking Request Approved");
-        }
-      });
+    const proceed = window.confirm("Confirm This order?");
+    if (proceed) {
+      const url = `http://localhost:5000/orders/${id}`;
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.modifiedCount > 0) {
+            alert("Order Confirmed");
+          }
+        });
+    }
   };
   return (
     <div className="container my-5 p-4">
