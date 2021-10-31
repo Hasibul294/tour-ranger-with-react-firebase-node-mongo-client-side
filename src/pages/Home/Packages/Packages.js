@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
 import Package from "../Package/Package";
 
 const Packages = () => {
   const [packages, setPackages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    setIsLoading(true);
     fetch("https://scary-broomstick-16729.herokuapp.com/packages")
       .then((res) => res.json())
-      .then((data) => setPackages(data));
+      .then((data) => {
+        setPackages(data);
+        setIsLoading(false);
+      });
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="text-center my-5">
+        <Spinner className="text-center" animation="border" variant="primary" />
+      </div>
+    );
+  }
   return (
     <div className="my-5 p-4">
       <h5 className="mb-3 text-color">Choose Your Package</h5>
