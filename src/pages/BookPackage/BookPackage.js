@@ -1,8 +1,9 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Rating from "react-rating";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import "./BookPackage.css";
 
@@ -11,17 +12,25 @@ const BookPackage = () => {
   const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const [pack, setPack] = useState();
+  const history = useHistory();
 
   const onSubmit = (data) => {
     console.log(data);
-    reset();
+    data.packageTitle = pack.title;
+    axios.post("http://localhost:5000/packages/booking", data).then((res) => {
+      if (res.data.insertedId) {
+        alert("Your Booking is Confirmed");
+        reset();
+        history.push("/home");
+      }
+    });
   };
 
   useEffect(() => {
     fetch(`http://localhost:5000/packages/${id}`)
       .then((res) => res.json())
       .then((data) => setPack(data));
-  }, []);
+  }, [id]);
 
   return (
     <div className="my-5 p-4">
@@ -36,7 +45,7 @@ const BookPackage = () => {
               <hr className="text-secondary mb-2" />
               <div className="text-start d-flex justify-content-between align-items-center">
                 <h2 className="text-color">
-                  <i class="text-secondary me-1 fas fa-map-marker-alt"></i>
+                  <i className="text-secondary me-1 fas fa-map-marker-alt"></i>
                   {pack?.title}
                 </h2>
                 <p>
@@ -79,13 +88,12 @@ const BookPackage = () => {
               <h4>Book This Package</h4>
               <form className="book-form" onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name")} placeholder="Full Name" required />
-                <input {...register("email")} value={user.email} />
+                <input {...register("email")} defaultValue={user.email} />
                 <input
                   {...register("address")}
                   placeholder="Your Address"
                   required
                 />
-                <input type="number" {...register("cost")} />
                 <input
                   type="number"
                   {...register("age", { min: 18, max: 99 })}
@@ -93,6 +101,8 @@ const BookPackage = () => {
                   required
                 />
                 <textarea {...register("massage")} placeholder="Massage" />
+                <p className="text-start mb-0 mt-1">Your Package</p>
+                <input defaultValue={pack?.title} required />
                 <input
                   className="bg-orange border-0 text-white py-2 rounded-pill"
                   type="submit"

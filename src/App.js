@@ -12,6 +12,8 @@ import Packages from "./pages/Home/Packages/Packages";
 import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
 import BookPackage from "./pages/BookPackage/BookPackage";
 import AddPackage from "./pages/AddPackage/AddPackage";
+import MyOrders from "./pages/MyOrders/MyOrders";
+import ManageOrder from "./pages/ManageOrder/ManageOrder";
 
 function App() {
   return (
@@ -34,6 +36,12 @@ function App() {
             </PrivateRoute>
             <Route exact path="/addNewPackage">
               <AddPackage></AddPackage>
+            </Route>
+            <Route exact path="/myOrder">
+              <MyOrders></MyOrders>
+            </Route>
+            <Route exact path="/manageOrder">
+              <ManageOrder></ManageOrder>
             </Route>
             <Route exact path="/login">
               <Login></Login>
